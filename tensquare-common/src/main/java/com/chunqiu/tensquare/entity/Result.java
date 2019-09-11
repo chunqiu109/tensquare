@@ -6,6 +6,7 @@ package com.chunqiu.tensquare.entity;
  * @author Wangchunqiu
  * @date $
  */
+@SuppressWarnings(value = "unused")
 public class Result {
 
     private boolean flag;//是否成功
