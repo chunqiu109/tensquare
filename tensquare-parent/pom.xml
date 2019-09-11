@@ -77,6 +77,7 @@
 
     <modules>
         <module>../tensquare-common</module>
+        <module>../tensquare-base</module>
     </modules>
 
 </project>
