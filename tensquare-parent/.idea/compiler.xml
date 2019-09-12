@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="tensquare-recruit" />
         <module name="tensquare-base" />
-        <module name="tensquare_recruit" />
         <module name="tensquare-common" />
       </profile>
     </annotationProcessing>
@@ -16,7 +16,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="tensquare-base" options="-parameters" />
       <module name="tensquare-common" options="-parameters" />
-      <module name="tensquare_recruit" options="-parameters" />
+      <module name="tensquare-recruit" options="-parameters" />
     </option>
   </component>
 </project>
