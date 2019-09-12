@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tensquare.recruit.pojo.Enterprise;
 import com.tensquare.recruit.service.EnterpriseService;
 
-import entity.PageResult;
-import entity.Result;
-import entity.StatusCode;
+import com.chunqiu.tensquare.entity.PageResult;
+import com.chunqiu.tensquare.entity.Result;
+import com.chunqiu.tensquare.entity.StatusCode;
 /**
  * 控制器层
  * @author Administrator
@@ -29,8 +29,17 @@ public class EnterpriseController {
 
 	@Autowired
 	private EnterpriseService enterpriseService;
-	
-	
+
+	/**
+	 * 查询热门企业
+	 * @return
+	 */
+	@RequestMapping(value = "/search/hotlist",method = RequestMethod.GET)
+	public Result hotlist(){
+		List<Enterprise> list = enterpriseService.findIshot("1");
+		return new Result(true,StatusCode.OK,"查询热门城市成功！",list);
+	}
+
 	/**
 	 * 查询全部数据
 	 * @return
