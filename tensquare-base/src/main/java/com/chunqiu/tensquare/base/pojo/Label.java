@@ -3,16 +3,16 @@ package com.chunqiu.tensquare.base.pojo;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  *功能描述 标签实体类
  * @author Wangchunqiu
- * @date $
  */
 @Entity  //表明该类为一个实体类
 @Table(name = "tb_label")
 @SuppressWarnings(value = "unused")
-public class Label {
+public class Label implements Serializable {
 
     @Id
     private String id;//
