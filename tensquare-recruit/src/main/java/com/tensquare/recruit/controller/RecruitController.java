@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tensquare.recruit.pojo.Recruit;
 import com.tensquare.recruit.service.RecruitService;
 
-import entity.PageResult;
-import entity.Result;
-import entity.StatusCode;
+import com.chunqiu.tensquare.entity.PageResult;
+import com.chunqiu.tensquare.entity.Result;
+import com.chunqiu.tensquare.entity.StatusCode;
 /**
  * 控制器层
  * @author Administrator
