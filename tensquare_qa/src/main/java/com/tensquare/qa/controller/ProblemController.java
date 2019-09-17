@@ -1,5 +1,4 @@
 package com.tensquare.qa.controller;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +28,36 @@ public class ProblemController {
 
 	@Autowired
 	private ProblemService problemService;
-	
-	
+
+	/**
+	 * 最新问题
+	 * @return
+	 */
+	@RequestMapping(value="newlist/{labelid}/{page}/{size}",method = RequestMethod.GET)
+	public Result newlist(@PathVariable String labelid,@PathVariable int page,@PathVariable int size){
+		Page<Problem> pageData = problemService.newlist(labelid,page,size);
+		return new Result(true,StatusCode.OK,"最新问题查询成功！",pageData);
+	}
+
+	/**
+	 * 未回答问题
+	 * @return
+	 */
+	@RequestMapping(value="waitlist/{labelid}/{page}/{size}",method = RequestMethod.GET)
+	public Result waitlist(@PathVariable String labelid,@PathVariable int page,@PathVariable int size){
+		Page<Problem> pageData = problemService.waitlist(labelid,page,size);
+		return new Result(true,StatusCode.OK,"未回答问题查询成功！",pageData);
+	}
+
+	/**
+	 * 最热问题
+	 * @return
+	 */
+	@RequestMapping(value="hotlist/{labelid}/{page}/{size}",method = RequestMethod.GET)
+	public Result hotlist(@PathVariable String labelid,@PathVariable int page,@PathVariable int size){
+		Page<Problem> pageData = problemService.hotlist(labelid,page,size);
+		return new Result(true,StatusCode.OK,"最热问题查询成功！",pageData);
+	}
 	/**
 	 * 查询全部数据
 	 * @return

@@ -10,6 +10,7 @@ import javax.persistence.criteria.Root;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +33,42 @@ public class ProblemService {
 	
 	@Autowired
 	private IdWorker idWorker;
+
+	/**
+	 * 最新问题
+	 * @param labelid 标签id
+	 * @param page 第几页
+	 * @param rows 每页数量
+	 * @return
+	 */
+	public Page<Problem> newlist(String labelid, int page, int rows){
+		Pageable pageable = PageRequest.of(page-1,rows);
+		return problemDao.newlist(labelid,pageable);
+	}
+
+	/**
+	 * 最热问题
+	 * @param labelid 标签id
+	 * @param page 第几页
+	 * @param rows 每页数量
+	 * @return
+	 */
+	public Page<Problem> hotlist(String labelid, int page, int rows){
+		Pageable pageable = PageRequest.of(page-1,rows);
+		return problemDao.hotlist(labelid,pageable);
+	}
+
+	/**
+	 * 等待回答的问题
+	 * @param labelid 标签id
+	 * @param page 第几页
+	 * @param rows 每页数量
+	 * @return
+	 */
+	public Page<Problem> waitlist(String labelid, int page, int rows){
+		Pageable pageable = PageRequest.of(page-1,rows);
+		return problemDao.waitlist(labelid,pageable);
+	}
 
 	/**
 	 * 查询全部列表
