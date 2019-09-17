@@ -10,6 +10,7 @@ public class ArticleApplication {
 		SpringApplication.run(ArticleApplication.class, args);
 	}
 
+
 	@Bean
 	public IdWorker idWorkker(){
 		return new IdWorker(1, 1);
