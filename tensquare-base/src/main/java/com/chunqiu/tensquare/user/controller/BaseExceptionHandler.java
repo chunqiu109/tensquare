@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
- *功能描述 
+ *功能描述 程序发生错误的时候的controller
  * @author Wangchunqiu
  * @date $
  */
