@@ -82,6 +82,7 @@
         <module>../tensquare-qa</module>
         <module>../tensquare-article</module>
         <module>../tensquare-gathering</module>
+        <module>../tensquare-spit</module>
     </modules>
 
 </project>
