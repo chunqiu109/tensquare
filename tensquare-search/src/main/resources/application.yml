@@ -8,4 +8,4 @@ spring:
     elasticsearch:
       #es节点，注意端口是9300
       #cluster-nodes: 127.0.0.1:9300
-      cluster-nodes: 127.0.0.1:9300
+      cluster-nodes: 192.168.183.136:9300
